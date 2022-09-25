@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
         exit(-1);
     }
 
-    // Clear struct for new port settings
+    // Clear struct for new port settings5
     memset(&newtio, 0, sizeof(newtio));
 
     newtio.c_cflag = BAUDRATE | CS8 | CLOCAL | CREAD;
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
     // Set input mode (non-canonical, no echo,...)
     newtio.c_lflag = 0;
     newtio.c_cc[VTIME] = 0; // Inter-character timer unused
-    newtio.c_cc[VMIN] = 5;  // Blocking read until 5 chars received
+    newtio.c_cc[VMIN] = 255;  // Blocking read until 255 chars received
 
     // VTIME e VMIN should be changed in order to protect with a
     // timeout the reception of the following character(s)
@@ -86,20 +86,22 @@ int main(int argc, char *argv[])
         exit(-1);
     }
 
-    printf("New termios structure set\n");
-
-    // Loop for input
     unsigned char buf[BUF_SIZE + 1] = {0}; // +1: Save space for the final '\0' char
+    int bytes;
 
+    printf("Mensagem recebida:\n");
     while (STOP == FALSE)
     {
-        // Returns after 5 chars have been input
-        int bytes = read(fd, buf, BUF_SIZE);
+        bytes = read(fd, buf, BUF_SIZE);
         buf[bytes] = '\0'; // Set end of string to '\0', so we can printf
+        printf("%s", buf);
 
-        printf(":%s:%d\n", buf, bytes);
-        if (buf[0] == 'z')
+        // Reenvia a mensagem
+        bytes = write(fd, buf, BUF_SIZE);
+
+        if (buf[0] == '\0') {
             STOP = TRUE;
+        }
     }
 
     // The while() cycle should be changed in order to respect the specifications

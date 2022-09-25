@@ -26,10 +26,10 @@ O programa em C `cable` trata de construir uma porta série virtual. Para isso:
 
 ```bash
 $ gcc -Wall cable.c -o cable
-$ /cable
+$ sudo ./cable
 ```
 
-Depois é só abrir mais dois terminais (um emissor e outro receptor) e executar o seguinte código:
+Com este programa a correr, é só abrir mais dois terminais (um emissor e outro receptor) e executar o seguinte código:
 
 ```bash
 # Emissor
@@ -39,4 +39,4 @@ gcc -Wall write_noncanonical.c -o writer && ./writer /dev/ttyS10
 $ gcc -Wall read_noncanonical.c -o reader && ./reader /dev/ttyS11
 ```
 
-É suposto escrever no emissor uma mensagem de no máximo X caracteres e essa mensagem aparecer. Depois essa mensagem.
+É suposto escrever no emissor uma mensagem de no máximo BUF_SIZE caracteres e essa mensagem aparecer no receptor. Na aula o código foi mudado para que quando o receptor recebesse a mensagem voltar a enviar pela porta série ao emissor. Todos os caracteres devem ser mostrados outra vez no emissor antes de terminar a comunicação.
