@@ -44,4 +44,8 @@ int llread(unsigned char *packet);
 // Return "1" on success or "-1" on error.
 int llclose(int showStatistics);
 
+
+int read_message(LinkLayer connectionParameters);
+int write_message(LinkLayer connectionParameters, unsigned char *message);
+
 #endif // _LINK_LAYER_H_
