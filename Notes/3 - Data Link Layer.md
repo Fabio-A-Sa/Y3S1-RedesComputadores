@@ -58,3 +58,15 @@ No lado do receptor, é só fazer a divisão inteira de T(x) por G(x). Se R(x) f
 
 ## Automatic Repeat Request (ARQ)
 
+Sistema que pede retransmissões de pacotes em falta ou com erros detectados. Existem três técnicas principais:
+
+### 1 - Stop and Wait
+
+
+
+### 2 - Go Back N
+
+
+
+### Selective Repeat
+
