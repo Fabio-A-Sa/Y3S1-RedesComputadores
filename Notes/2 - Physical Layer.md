@@ -76,4 +76,9 @@ A transmissão é feita com base na reflexão total da luz, em altas larguras de
 
 ## Free Space Loss
 
-Numa transmissão entre antenas, em espaço livre de outros obstáculos, a 
+Numa transmissão entre antenas, em espaço livre de outros obstáculos, a perda de potência entre antenas é definida como:
+
+<p align="center">
+    <img src="../Images/FreeSpace.png">
+    <p align="center">Figura 2: Free Space Loss</p>
+</p>
