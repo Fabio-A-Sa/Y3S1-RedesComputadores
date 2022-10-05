@@ -41,3 +41,22 @@ Há 4 formas de transmitir os bits através da mudanças na fonte:
 3. **Frequência** - mudanças na frequência do sinal quando há transmissão de 1;
 4. **Fase** - mudanças de fase / do formato da onde quando há transmissão de 1;
 
+## Shannon's Law
+
+A máxima capacidade teórica de um canal é definida por:
+
+C = Bc * log (1 + Pr/(NOBC))
+
+Com Bc a ser a taxa de amostragem, em símbolos/s, Pr a potência prevista pelo receptor, N0 a potência de ruído por unidade de largura de banda, NOBc potência de ruído dentro da largura de banda estipulada. Assim o termo do logarítimo representa Signal to Noise ratio (SNR). 
+
+### Notas importantes sobre a Shannon's Law
+
+- A capacidade do canal é proporcional à largura de banda;
+- Com um sinal significativamente superior ao nível de ruído, a capacidade é proporcional ao logaritmo de SNR. 
+
+### Conversão de unidades:
+
+Ambas com Potência P em W, temos que:
+- PdBW = 10*log10P
+- PdBm = 10*log10(P/1mW)
+
