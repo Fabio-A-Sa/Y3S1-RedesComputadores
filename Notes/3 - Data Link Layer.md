@@ -52,4 +52,4 @@ Parecido com a situação anterior, mas a paridade é calculada por bloco, em li
 #### Cyclic Redundancy Check
 
 A string de bits é representada por um polinómio M(x). Quando o número de bits em redundância é r, escolhemos uma string G(x) = x^r + 1 (r=3, s=1001), e fazemos uma divisão inteira de M(x) * x^r pelo polinómio G(x), que dará um polinómio R(x). O transmitido deverá ser M(x)*x^r + R(x). <br>
-No lado do receptor, é só fazer a divisão inteira de T(x) por G(x). Se R(x) for diferente de zero, então algum erro ocorreu. 
+No lado do receptor, é só fazer a divisão inteira de T(x) por G(x). Se R(x) for diferente de zero, então algum erro ocorreu. É uma técnica muito usada, principalmente por ser facilmente implementada em software. 
