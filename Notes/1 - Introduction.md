@@ -19,6 +19,23 @@ As redes podem ser classificadas de acordo com a área/extensão de atuação:
 
 1. **PAN - Personal Area Network**, 1 metro, bluetooth entre dispositivos de uma secretária;
 2. **LAN - Local Area Network**, 10 metros a 1 quilómetro, no quarto, construção ou campus. É exemplo a rede da FEUP, que tem switches, routers e access points;
-3. **MAN - Metropolitan Area Network**, 10 quilómetros, onde pode conter uma antena e servidores;
+3. **MAN - Metropolitan Area Network**, 10 quilómetros, onde pode conter uma antena e servidores;s, protocols, an
 4. **WAN - Wide Area Network**, engloba um continente;
 5. **Internet - no Planeta**, é um conjunto de redes conectadas;
+
+## Protocol Stacks
+
+A comunicação entre dois ou mais Hosts é feita segundo um modelo de black box. As camadas superiores usam as APIs dadas pelas camadas inferiores para criar o seu protocolo.
+
+<p align="center">
+    <img src="../Images/Layers.png">
+    <p align="center">Figura 1: Layers</p>
+</p>
+
+Cada camada trata de criar headers próprios para que a informação contida em cada pacote seja correctamente identificada e transportada. É comum nos serviços existirem 5 camadas principais para transferência da informação:
+
+1. **Application layer**:
+2. **Transport layer**
+3. **Network layer**
+4. **Data Link layer**
+5. **Physical layer**
