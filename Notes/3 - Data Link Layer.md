@@ -30,3 +30,24 @@ Pode haver erros de um bit transmitido (*simple error*) ou de um grupo de bits t
 
 ## Error technics
 
+Nestes casos seguintes:
+- `d`, significa o número de bits mínimo para que um erro não seja detectado num conjunto de dados transmitido;
+- `D`, significa o número máximo de erros detectados num conjunto de bits;
+
+### Redundância
+
+Em vez de enviar um frame de k bits, envia um frame de k+r bits, com r a servir de redundância. Assim, do lado do receptor, pode haver um reconhecimento de um erro ocorrido num ou mais dos k bits de dados. 
+
+#### Simple Parity Check
+
+- Paridade par: verifica se o número de bits a 1 é par;
+- Paridade ímpar: verifica se o número de bits a 1 é ímpar;
+
+Nesta situação, apenas detecta erros simples ou erros derivados de um número ímpar de erros de transmissão. É muito usado em protocolos orientados a caracteres. 
+
+#### Bi-dimensional Parity Check
+
+Parecido com a situação anterior, mas a paridade é calculada por bloco, em linhas verticais e horizontais. Neste caso, qualquer erro numa configuração rectangular é indetectável, ou seja, d = 4. 
+
+#### Cyclic Redundancy Check
+
