@@ -62,7 +62,25 @@ Sistema que pede retransmissões de pacotes em falta ou com erros detectados. Ex
 
 ### 1 - Stop and Wait
 
+O transmissor lança uma frame I e espera até que exista confirmação (ACK) do lado do receptor. Quando o receptor recebe o frame I, se este tiver erros lança um NACK, senão lança um ACK. Do outro lado é necessário existir um timeout e um número de tentativas fixas para prevenir erros de transmissão de mensagens. Caso receba um NACK, volta a enviar o frame anterior. 
 
+#### Problema
+
+Necessita de um conjunto sequencial de frames numerados, caso contrário os timeouts de um lado e do outro acabam por baralhar a transmissão. Neste caso apenas existem ACK(i) e o NACK não é necessário.
+
+#### Eficiência
+
+##### Sem erros
+
+A eficiência mede-se através da razão entre o tempo de manipulação do frame por parte do receptor, Tf, e a soma entre Tf e os tempos de propagação, Tp. Ou seja, segundo esta fórmula:
+
+> S = Tf / (Tf + 2*Tp)
+
+##### Com erros
+
+Designando pe pela probabilidade de ocorrência de um erro no frame, então a eficiência é dada pela seguinte fórmula:
+
+> S = (1 - pe) / (Tf + 2*Tp)
 
 ### 2 - Go Back N
 
