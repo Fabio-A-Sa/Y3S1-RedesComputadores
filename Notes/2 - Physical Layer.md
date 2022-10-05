@@ -26,3 +26,18 @@ Se M = 4, ou seja, há 4 níveis de diferença de potencial para enviar a inform
 ### Clock Recovery
 
 Para descodificar os símbolos, o sinal precisa ter transições suficientes. Então é usada uma codificação Manchester que, por cada 4 bits de dados, manda também uma codificação de 5 bits respectivamente. 
+
+## Modulação
+
+Há 4 formas de transmitir os bits através da mudanças na fonte:
+
+<p align="center">
+    <img src="../Images/Modulation.png">
+    <p align="center">Figura 1: Modulation</p>
+</p>
+
+1. **Sinal binário** - transição entre diferenças de potencial;
+2. **Amplitude** - mudanças da amplitude no sinal quando há transmissão de 1;
+3. **Frequência** - mudanças na frequência do sinal quando há transmissão de 1;
+4. **Fase** - mudanças de fase / do formato da onde quando há transmissão de 1;
+
