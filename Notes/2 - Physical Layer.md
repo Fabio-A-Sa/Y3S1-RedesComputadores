@@ -60,3 +60,16 @@ Ambas com Potência P em W, temos que:
 - PdBW = 10*log10P
 - PdBm = 10*log10(P/1mW)
 
+## Transmissões por cabos
+
+### 1 - **Coaxiable**
+
+Como cabos das televisões. Têm uma alta largura de banda, boa imunidade a ruídos e baixas atenuações.
+
+### 2 - **UTP - Twisted pair**
+
+Os fios são trançados e não protegidos dentro de um fio maior. Aqui o ganho/atenuação em frequência é proporcional à distância percorrida. São exemplos os cabos de rede, como nos routers de casa. 
+
+### 3 - **Fiber optic**
+
+A transmissão é feita com base na reflexão total da luz, em altas larguras de banda, baixas atenuações (delays) e segundo o NRZ (luz 1, não luz 0). O comprimento de onda, C, é igual à velocidade da luz * período, e assim a velocidade de propagação é igual ao comprimento da onda * frequência. 
