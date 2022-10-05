@@ -84,6 +84,19 @@ Designando pe pela probabilidade de ocorrência de um erro no frame, então a ef
 
 ### 2 - Go Back N
 
+O problema do protocolo Stop and Wait é que em para longas distâncias, o tempo de transmissão é cada vez maior e acaba por diminuir bastante a eficiência. A ideia agora é estudar os `sliding window protocols`: permitem a transmissão de vários frames antes de começar a receber as confirmações do seu envio.
+
+#### Transmissor
+
+Pode transmitir W frames (W = 2^k-1, com k a ser o número de bits usados para codificar as sequências) e tem de esperar por alguma confirmação antes de transmitir o W+1 frame. 
+Se um timeout ocorrer, o transmissor envia uma mensagem RR() para que o receptor indique qual é o índice do frame a enviar de seguida.
+
+#### Receptor
+
+Rejeita qualquer frame fora da sequência, enviando somente ACK(i) para indicar que os frames i-1 foram enviados correctamente. i é sempre o número de sequência do próximo frame esperado.
+
+##### Eficiência
+
 
 
 ### Selective Repeat
