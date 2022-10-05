@@ -44,7 +44,8 @@ Cada camada trata de criar headers próprios para que a informação contida em 
 
 ### Circuit Switching
 
-
+A comunicação é só feita após uma ligação bem estabelecida entre a fonte e o receptor (e entre os intermediários). Após isso os dados são enviados de uma vez. Há um delay no início para estabelecimento da ligação.
 
 ### Packet Switching
 
+A informação está concebida em pacotes que são enviados sequencialmente entre todos os intermediários e segundo a ordem da fila. 
