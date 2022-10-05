@@ -34,8 +34,17 @@ A comunicação entre dois ou mais Hosts é feita segundo um modelo de black box
 
 Cada camada trata de criar headers próprios para que a informação contida em cada pacote seja correctamente identificada e transportada. É comum nos serviços existirem 5 camadas principais para transferência da informação:
 
-1. **Application layer**:
-2. **Transport layer**
-3. **Network layer**
-4. **Data Link layer**
-5. **Physical layer**
+1. **Application layer**: suporta a aplicação propriamente dita. É a camada mais externa da transferência. São exemplos o FTP, SMTP, HTTP.
+2. **Transport layer**: Process-process / end-to-end. Como os protocolos TCP, UDP.
+3. **Network layer**: roteamento dos pacotes desde a fonte para o destino. Por exemplo os IP.
+4. **Data Link layer**: informação transferida entre os elementos das redes vizinhas. São exemplos PPP, Ethernet e WLAN.
+5. **Physical layer**: os bits que são transferidos.
+
+## Transferência da informação:
+
+### Circuit Switching
+
+
+
+### Packet Switching
+
