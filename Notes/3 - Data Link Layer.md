@@ -8,3 +8,15 @@ Os dados enviados devem ser separados em frames / pacotes para regular o fluxo d
 
 ### 1 - Character byte count
 
+O primeiro byte do frame indica quantos bytes o frame possui. No entanto, quando ocorre um erro torna-se impossível resolver a situação e a partir daí todos os dados são corrompidos. Não é uma técnica usada atualmente.
+
+### 2 - Flag bytes with byte stuffing
+
+O frame é delimitado por bytes de flag. Como o código desses bytes pode aparecer no meio dos dados, ocorrendo assim o possível corte da frame e consequente perda de dados, então há o **byte stuffing**: antes de cada flag que apareça nos dados, colocar um byte de escape ESC, até mesmo para o próprio byte de ESC. O receptor, antes de qualquer análise aos dados do frame, deverá fazer destuffing. É esta técnica a adoptar no caso do trabalho prático.
+
+### 3 - Start and End flags with bit stuffing
+
+Em vez de criar um byte, coloca-se um bit para travar qualquer interpretação errada. Por exemplo: se a flag for 0b01111110, então nos dados depois de cada 011111 colocar um 0 para evitar sequências iguais. De forma semelhante, o receptor só deverá interpretar os dados quando ocorrer destuffing.
+
+## Error detection
+
