@@ -20,3 +20,13 @@ Em vez de criar um byte, coloca-se um bit para travar qualquer interpretação e
 
 ## Error detection
 
+Pode haver erros de um bit transmitido (*simple error*) ou de um grupo de bits transmitidos (*errors in bursts*). Estes últimos não são independentes e afetam os bits vizinhos.
+
+### Probabilidades
+
+- A probabilidade de um frame não conter erros, FER (Frame Error Ratio), é dado por FER = (1-BER)^n, com BER igual à probabilidade de um bit ter erros de transmissão (Bit Error Ratio) e n o comprimento do frame enviado. 
+
+- A probabilidade de i bits conterem erros é igual à quantidade de escolhas possíveis nos n bits da trama vezes a probabilidade de n-i bits serem transmitidos bem e i bits serem transmitidos erradamente, com i <= n.
+
+## Error technics
+
