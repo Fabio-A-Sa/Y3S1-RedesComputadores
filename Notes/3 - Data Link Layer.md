@@ -105,9 +105,14 @@ Rejeita qualquer frame fora da sequência, enviando somente ACK(i) para indicar 
 Usa a técnica da janela mas aceita tramas fora de ordem, ao contrário  do Go Back N. Usada para casose em que `W` ou `a` são muito elevados. O receptor sinaliza a falta/erro no frame i, enviando SREJ(i) ao emissor e continuando a guardar no buffer as tramas seguintes. O emissor continua a enviar tramas e retransmite apenas o que é pedido pelo receptor.
 
 O tamanho da janela é agora W = M / 2 = 2^(k-1). Ou seja, o emissor pode enviar no máximo M/2 tramas sem confirmação por parte do receptor.
-#TODO: justificação do livro, relacionado com timeout e com o buffer.
+Isto deve-se à justificação presente no livro recomendado, página 242 do capítulo 3: para o receptor não conter overlap da sua própria janela, então acaba por ter de enviar, no máximo, meia janela antes de receber um ACK. 
 
-#TODO: eficiência
+#### Eficiência
+
+>
+> 1 - pe, se W >= 1 + 2a <br>
+> W * (1 - pe) / (1+2a), se W < 1 + 2a
+>
 
 ## Deteção de erros nas redes
 
@@ -137,8 +142,8 @@ Em sistemas ARQ, os dados podem ser recuperados na data-link layer ou na transpo
 Usada na `data link layer`. Os pacotes de dados caso se percam são pedidos ao emissor imediatamente pelo intermediário na rede e não pelo receptor final. Repara as perdas link por link, mas requer store de pacotes caso tenham de ser retransmitidos e um processamento maior entre intermediários.
 
 > PLR -> Packet Loss Ratio <br>
-> C = bits/s<br>
-> Capacidade = C * (1-PLR)<br>
+> C = bits/s <br>
+> Capacidade = C * (1-PLR) <br>
 
 ### 2. End-to-end ARQ
 
