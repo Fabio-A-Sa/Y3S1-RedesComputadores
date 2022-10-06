@@ -24,3 +24,11 @@ O delay é um importante indicador de performence nas redes de comunicação. É
 - Calcula o tempo médio de espera por pacote;
 
 Quando as filas (nos routers, switches...) estão cheios, há pacotes que se perdem.
+
+### Poisson Processes
+
+Calculam a probabilidade de eventos discretos e independentes: a chegada de x pacotes num intervalo de tempo. <br>
+Exemplo: sabe-se que numa rede existe capacidade de transporte de m pacotes por minuto. Calcule a probabilidade de ocorrer transporte de x pacotes nesse mesmo muito. Usando a distribuição de Poisson:
+
+> P(x) = (m^x * e^(-m)) / x!
+> A variância e o valor esperado é sempre igual ao valor médio: m
