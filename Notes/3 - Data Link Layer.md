@@ -97,8 +97,8 @@ Rejeita qualquer frame fora da sequência, enviando somente ACK(i) para indicar 
 
 ##### Eficiência
 
-> S = W / (1+2a), se W < (1 + 2a), número de tramas que simultaneamente estão no cabo é inferior ao número de tramas da janela
-> S = 1, caso contrário
+> S = W / (1+2a), se W < (1 + 2a), número de tramas que simultaneamente estão no cabo é inferior ao número de tramas da janela<br>
+> S = 1, caso contrário<br>
 
 ### Selective Repeat
 
@@ -123,6 +123,34 @@ A trama é delimitada por FLAG = 0x7E, existe byte stuffing com o ESC = 0x7D, al
 
 No início da trama tem um conjunto de bytes de sincronização. Normalmente usa um polinómio gerador de 16 bits e ARQ de Stop and Wait.
 
-### High-level Data Link Control
+### High-level Data Link Control (HDLC)
 
+Usa flags para delimitar as tramas, usa bit stuffing, polinómio gerador de 16 bits e técnicas como o Selective Repeat e Go-Back N (suporta ambos). É a técnica mais usada pelos telemóveis para enviar dados.
 
+## Fiabilidade
+
+Usando **técnicas de retransmissão** ou **técnicas de reconstrução**. Na physical layer pode haver FEC coding, que trata de dar redundância acrescida aos dados e assim, na parte do receptor, caso haja detecção de erros pode haver reconstrução dos bits iniciais. <br>
+Em sistemas ARQ, os dados podem ser recuperados na data-link layer ou na transport layer. Há dois tipos:
+
+### 1. Link-by-link ARQ
+
+Usada na `data link layer`. Os pacotes de dados caso se percam são pedidos ao emissor imediatamente pelo intermediário na rede e não pelo receptor final. Repara as perdas link por link, mas requer store de pacotes caso tenham de ser retransmitidos e um processamento maior entre intermediários.
+
+> PLR -> Packet Loss Ratio <br>
+> C = bits/s<br>
+> Capacidade = C * (1-PLR)<br>
+
+### 2. End-to-end ARQ
+
+Usada na `transport layer`. Só quando o receptor final perceber que um pacote se perdeu é que pede ao emissor para o retransmitir. É um processo com menor complexidade, mas não é aceitável quando a taxa de erros em tramas é elevada, como é o caso das ligações sem fio.
+
+> PLR -> Packet Loss Ratio<br>
+> C = bits/s<br>
+> k = número de links que formam a conexão<br>
+> Capacidade = C * (1-PLR)^k<br>
+
+#### TCP/IP
+
+No caso do protocolo TCP/IP, os pacotes perdidos são reparados:
+- Na data-link layer (wireless data links, através de ARQ quando o meio de propagação é propício a erros);
+- No receptor final (em transport ou application layers, quando o meio de propagação é fiável);
