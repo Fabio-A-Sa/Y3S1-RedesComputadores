@@ -97,7 +97,32 @@ Rejeita qualquer frame fora da sequência, enviando somente ACK(i) para indicar 
 
 ##### Eficiência
 
-
+> S = W / (1+2a), se W < (1 + 2a), número de tramas que simultaneamente estão no cabo é inferior ao número de tramas da janela
+> S = 1, caso contrário
 
 ### Selective Repeat
+
+Usa a técnica da janela mas aceita tramas fora de ordem, ao contrário  do Go Back N. Usada para casose em que `W` ou `a` são muito elevados. O receptor sinaliza a falta/erro no frame i, enviando SREJ(i) ao emissor e continuando a guardar no buffer as tramas seguintes. O emissor continua a enviar tramas e retransmite apenas o que é pedido pelo receptor.
+
+O tamanho da janela é agora W = M / 2 = 2^(k-1). Ou seja, o emissor pode enviar no máximo M/2 tramas sem confirmação por parte do receptor.
+#TODO: justificação do livro, relacionado com timeout e com o buffer.
+
+#TODO: eficiência
+
+## Deteção de erros nas redes
+
+### Ethernet
+
+Os frames são compostos por um **preamble** de 7 octetos, seguido de uma flag SFD, DA e SA, seguida do comprimento em bytes da informação enviada e posteriormente por uma redundância CRC.
+
+### Point to Point Protocol
+
+A trama é delimitada por FLAG = 0x7E, existe byte stuffing com o ESC = 0x7D, algum tipo de deteção de erros (redundância e checksum), e um byte para endereço e outro para controlo. Semelhante ao implementado nas aulas de laboratório.
+
+### Wireless LAN
+
+No início da trama tem um conjunto de bytes de sincronização. Normalmente usa um polinómio gerador de 16 bits e ARQ de Stop and Wait.
+
+### High-level Data Link Control
+
 
