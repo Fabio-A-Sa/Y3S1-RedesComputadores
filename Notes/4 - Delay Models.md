@@ -117,3 +117,4 @@ A ideia é acoplar vários envios de pacotes numa mesma linha de transmissão. A
 
 ### 2. Jakson Networks
 
+Há uma independência de rotas de pacotes, pois estes ficam em loop no sistema. P(i, j) representa por isso a probabilidade de um pacote sair do nó i e chegar ao nó j, considerando todas as entradas e saídas possíveis entre nós. 
