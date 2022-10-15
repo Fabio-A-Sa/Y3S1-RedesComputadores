@@ -104,6 +104,16 @@ Tem um modelo de chegada de pacotes de Poisson, enquanto o tempo de serviço seg
 
 ## Redes de filas de espera
 
-Numa rede de X filas de espera, a fila X não poderá ter uma taxa de Poisson chegada de pacotes, uma vez que está limitada à taxa de processamento/serviço da fila X-1.
+Numa rede de X filas de espera, a fila X não poderá ter uma taxa de Poisson chegada de pacotes, uma vez que está limitada à taxa de processamento/serviço da fila X-1. Há, no entanto, duas soluções:
 
-// TODO: 35 -> Fim
+### 1. Kleinrock Independence Approximation
+
+A ideia é acoplar vários envios de pacotes numa mesma linha de transmissão. Assim há reestabelecimento da independência dos tempos segundo os tamanhos dos pacotes. O modelo M/M/1 pode ser usado para modelar cada canal de comunicação. <br>
+
+- Os sistemas envolvendo Poisson estão nas portas de entrada;
+- Os tamanhos dos pacotes são dados por distribuições exponenciais;
+- São redes densamente conectadas;
+- Moderam a carga de tráfego pesado;
+
+### 2. Jakson Networks
+
