@@ -96,10 +96,14 @@ Modelo de filas de comprimento finito (B buffers). Neste caso os pacotes podem s
 
 > P(B), probabilidade de perder pelo menos um pacote = ró^B * P(0)
 
-// TODO M/D/1 -> 27-30
+### Modelo M/D/1
+
+Tem um modelo de chegada de pacotes de Poisson, enquanto o tempo de serviço segue uma qualquer distribuição D em que se conheça E[X] e E[X^2]. Assim, segundo a fórmula de Pollaczek-Khinchin (P-K), tem-se que:
+
+> Tw = lambda * E[X^2] / (2*(1-ró)), com ró = labda / pico = lambda * E[X]
 
 ## Redes de filas de espera
 
-Numa rede de X filas de espera, a fila X não poderá ter uma taxa de Poisson chegada de pacotes, uma vez que está limitada à taxa de processamento da fila X-1.
+Numa rede de X filas de espera, a fila X não poderá ter uma taxa de Poisson chegada de pacotes, uma vez que está limitada à taxa de processamento/serviço da fila X-1.
 
 // TODO: 35 -> Fim
