@@ -76,7 +76,7 @@ Num sistema estável (as filas de espera não crescem infinitamente), o tempo m�
 
 ## Modelo de Markov Chain M/M/1/Inf
 
-Na Cadeia de Markov, os estados estão numerados de acordo com o número de clientes dentro do sistema. Há uma transição para cada intervalo de tempo delta, em que há possibilidade de avançar no estado (chegou mais um pacote) ou retornar ao estado anterio (o pacote foi processado e saiu do sistema). Assim:
+Na Cadeia de Markov, os estados estão numerados de acordo com o número de clientes dentro do sistema. Há uma transição para cada intervalo de tempo delta, em que há possibilidade de avançar no estado (chegou mais um pacote) ou retornar ao estado anterior (o pacote foi processado e saiu do sistema). Assim:
 
 > P(0, 0), probabilidade de não haver alteração de estado = 1 - lambda*delta - pico*delta <br>
 > P(i, i-1), probabilidade do pacote ser processado = pico*delta <br>
