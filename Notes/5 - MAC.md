@@ -52,7 +52,47 @@ Cada estação não interrompe a transmissão de outras. No entanto as colisões
 
 ##### Eficiência
 
+É uma técnica usada para valores de `a` bastante baixo, ou seja, a probabilidade de haver colisões é também baixa.
 
+> a = Tempo de propagação / Tempo de transmissão do pacote
+
+##### Persistent CSMA
+
+A estação transmite quando o canal estiver disponível. Quando o canal não estiver livre, então espera até que esteja. É o subtipo mais utilizado.
+
+##### Non-Persistent CSMA
+
+A estação transmite quando o canal estiver disponível. Quando o canal não estiver livre, então espera um tempo random e retransmite. É menos eficiente.
+
+##### P-Persistent CSMA
+
+É um intermédio entre os dois tipos anteriores. A estação transmite pacotes com probabilidade p. É considerado colisão quando a 
+
+#### CSMA/CD Carrier Sense Multiple Access Collision Detection
+
+##### Funcionamento
+
+Semelhante à técnica de CSMA. Enquanto uma estação transmite, fica à escuta. Se ouvir algo diferente do que transmite, então existe colisão e aborta imediatamente a operação. Assim não é necessário haver resposta para transmissões bem sucedidas (ACK).
+
+Para uma retransmissão, determina um atraso aleatório usando um algoritmo chamado "Binary Exponential Backoff". Para a retransmissão i, espera-se um número de slots aleatórios na gama [0, 2^i-1].
+
+Tramas curtas podem impedir a deteção de colisões sob o ponto de vista do emissor. O tempo de transmissão da trama deve ser maior do que duas vezes o tempo de ida e volta (tempo de propagação). 
+
+##### Eficiência
+
+> a = Tempo de propagação máximo / Tempo de transmissão da trama <br>
+> S = eficiência = 1 / (1 + 2ea) = 1 / (1 + 5.44a) <br>
+
+Esta técnica é bastante eficiente (S aproximado a 1) quando:
+
+- o cabo é pequeno;
+- comprimento das tramas é grande
+
+Na prática por causa de FER (*Frame Error Ratio*) a trama não pode ser muito grande. Não pode ser usado em meios sem fios uma vez que a atenuação é elevada: neste caso o transmissor ouve aquilo que fiz com uma potência elevada, a potência do outro transmissor é ouvida numa percentagem muito baixa e assim pode não haver deteção de colisões.
+
+#### CSMA/CA Carrier Sense Multiple Access Collision Avoidance
+
+Semelhante à técnica de CSMA. 
 
 ### Taking turns
 
