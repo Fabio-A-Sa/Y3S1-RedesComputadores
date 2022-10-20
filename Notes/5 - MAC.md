@@ -44,7 +44,15 @@ A implementação desta técnica com slots de tempo é mais eficiente (36.8% con
 
 Quando o tráfego é residual, a técnica ALOHA é bastante requisitada, pois em média há espera de 0.5 slots de tempo. Quando o tráfego é intenso, o tempo de espera aumenta exponencialmente, pois a probabilidade de colisão é elevada e aumenta o número de retransmissões.
 
-#### 
+#### CSMA Carrier Sense Multiple Access
+
+##### Funcionamento
+
+Cada estação não interrompe a transmissão de outras. No entanto as colisões ainda podem ocorrer devido aos tempos de propagação pelo canal, causando perda integral do pacote transmitido. 
+
+##### Eficiência
+
+
 
 ### Taking turns
 
