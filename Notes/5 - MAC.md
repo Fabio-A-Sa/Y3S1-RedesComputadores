@@ -66,7 +66,7 @@ A estação transmite quando o canal estiver disponível. Quando o canal não es
 
 ##### P-Persistent CSMA
 
-É um intermédio entre os dois tipos anteriores. A estação transmite pacotes com probabilidade p. É considerado colisão quando a 
+É um intermédio entre os dois tipos anteriores. A estação transmite pacotes com probabilidade p. É considerado colisão quando a transmissão não ocorreu bem no slot anterior, caso contrário a estação espera até que a estação esteja livre e aí repete o algoritmo.
 
 #### CSMA/CD Carrier Sense Multiple Access Collision Detection
 
@@ -92,7 +92,26 @@ Na prática por causa de FER (*Frame Error Ratio*) a trama não pode ser muito g
 
 #### CSMA/CA Carrier Sense Multiple Access Collision Avoidance
 
-Semelhante à técnica de CSMA. 
+
+##### Funcionamento
+
+Semelhante à técnica de CSMA. Antes de transmitir, a estação fica à escuta DIFS tempo e se o meio ainda estiver livre ao fim desse tempo, transmite o pacote. Senão, espera até à transmissão da estação e volta a esperar DIFS tempo mais um tempo aleatório com Backoff até tentar novamente. Para evitar colisões é necessário voltar a existir pacotes de confirmação (ACK).
+
+É um protocolo usado nas redes sem fios.
+
+##### CSMA/CA RTS-CTS
+
+Como as colisões não são detectadas e frames abortados, então há pequenos frames reservados usados para requests:
+
+- RTS: Request to Send, como pedido
+- CTS: Clear to Send, como resposta, é ouvida por todas as estações para evitar colisões.
 
 ### Taking turns
 
+#### Polling
+
+A estação principal dá autorização a outras estações para transmitir no seu tempo. Se os tempos forem bem implementados, não há colisões mas há algum tempo perdido em espera e na transmissão dos pedidos.
+
+#### Token passing
+
+Só há transmissão de dados nas estações que têm token. Pelo lado negativo há latência pois embora haja estações em que não têm nada a transmitir na sua vez, têm de passar o token pela rede e isso demora tempo.
