@@ -115,3 +115,21 @@ A estação principal dá autorização a outras estações para transmitir no s
 #### Token passing
 
 Só há transmissão de dados nas estações que têm token. Pelo lado negativo há latência pois embora haja estações em que não têm nada a transmitir na sua vez, têm de passar o token pela rede e isso demora tempo.
+
+# TODO: IEEE =====================================
+
+## Ethernet Topology
+
+1. `Bus` - com cabo coaxial, os computadores ligavam-se através de um cabo onde podia haver colisões e múltiplos transmissores e receptores. 
+2. `Active Hub` - existem repetidores que enviam os bits recebidos para todos as outras portas. Existe deteção de colisão, mas só numa única porta de cada vez. 
+3. `Bridge` - Separa os domínios de colisão e vários frames podem ser transmitidos simultaneamente.
+4. `Full Duplex Ethernet` - o CSMA/CD não é usado praticamente, pois não existem colisões. Os cabos UTP são usados (Unshielded Twisted Pair), que são mais baratos e fáceis de instalar, embora não suportem bem múltiplas transmissões ou receptores;
+5. `Ethernet de hoje em dia` - UTP para distâncias curtas, fibras óticas para longas, suporta redundância para minimizar erros. 
+
+### Switch Self-Learning
+
+As tramas que vão chegando ao switch, tem endereço de origem e destino. À medida que transmite e recebe, vai preenchendo as tabelas que relacionam os computadores às portas (se o computador A mandou informação na porta 1, então para comunicar com A é necessário enviar tramas na porta 1). As tabelas são temporárias e se o switch não souber para onde enviar, envia para todas as portas excepto ao transmissor. 
+
+### Virtual LANs
+
+Quando uma bridge ou switch tem simultaneamente várias redes, vários domínios de colisão. Podem ser extendidas com interfaces/cabos de fibra ótica *trunk link*.
