@@ -92,7 +92,6 @@ Na prática por causa de FER (*Frame Error Ratio*) a trama não pode ser muito g
 
 #### CSMA/CA Carrier Sense Multiple Access Collision Avoidance
 
-
 ##### Funcionamento
 
 Semelhante à técnica de CSMA. Antes de transmitir, a estação fica à escuta DIFS tempo e se o meio ainda estiver livre ao fim desse tempo, transmite o pacote. Senão, espera até à transmissão da estação e volta a esperar DIFS tempo mais um tempo aleatório com Backoff até tentar novamente. Para evitar colisões é necessário voltar a existir pacotes de confirmação (ACK).
@@ -115,8 +114,6 @@ A estação principal dá autorização a outras estações para transmitir no s
 #### Token passing
 
 Só há transmissão de dados nas estações que têm token. Pelo lado negativo há latência pois embora haja estações em que não têm nada a transmitir na sua vez, têm de passar o token pela rede e isso demora tempo.
-
-# TODO: IEEE =====================================
 
 ## Ethernet Topology
 
