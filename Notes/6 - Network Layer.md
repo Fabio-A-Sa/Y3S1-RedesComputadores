@@ -110,3 +110,4 @@ Um servidor na rede local (com IP que pode ser comum a muitas redes) pode-se lig
 
 ## Internet Control Message Protocol ICMP
 
+#TODO
