@@ -49,10 +49,31 @@ Cada subrede tem o endereço de rede (os três primeiros números decimais, os 2
 
 127.34.19.0/23, significa que o IP da subrede é definido pelos 23 bits mais significativos. 
 
+### Subnetting
+
+Há possibilidade de definir uma subrede dentro de uma rede. Para isso utiliza-se uma máscara de X bits. Exemplo: subnetid de 3 bits e hostid de 5 bits numa rede 192.228.17.0/24. 
+
 #### Endereços IP especiais
 
-0.0.0.0 - o host
-0.0.0.X - outro host
-1..1 - para enviar o pacote a todos os membros da rede local (broadcast)
-network.1..1 - para enviar o pacote a todos os membros da rede distante
-127.X.X.X - para um computador enviar pacotes para ele mesmo
+0.0.0.0 - o computador está a enviar o pacote para ele mesmo
+0.0.0.X - o computador está a enviar o pacote para um computador X na mesma rede
+255.255.255.255 - para enviar o pacote a todos os membros da rede local (broadcast)
+network.255.255.255 - para enviar o pacote a todos os membros da rede destino
+127.X.X.X - para um computador enviar pacotes para ele mesmo, loopback
+
+##### Nota
+
+Apesar de existirem X bits disponíveis para endereçar, há apenas 2^X-2 endereços disponíveis (não considerar tudo 0, subnet, ou tudo 1, broadcast).
+
+### Encaminhamento de pacotes
+
+Quando o router recebe um pacote na porta de entrada, consulta uma tabela "Forwarding table": cada destino está associado à interface/porta correspondente do router mais próximo na rede. 
+
+Uma tabela que tenha o prefixo da network (123.234.122.201), a máscara (/24), o gateway (123.123.125.123) e a interface (ethX), então:
+- Se o resultado da máscara & prefixo da network for igual, adicionar ao conjunto;
+- Escolher do conjunto o que contém a maior máscara, ou seja, o que tem encaminhamento mais específico;
+- Se a entrada selecionada tiver um gateway, então enviar para ele a partir da interface especificada;
+- Caso contrário, enviar logo para o computador de destino final;
+
+### Address Resolution Protocol ARP
+
