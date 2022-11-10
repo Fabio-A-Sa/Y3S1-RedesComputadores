@@ -77,3 +77,17 @@ Uma tabela que tenha o prefixo da network (123.234.122.201), a máscara (/24), o
 
 ### Address Resolution Protocol ARP
 
+Usado para obter o MAC address de algum computador na rede e associá-lo ao seu endereço IP. O IP e MAC do computador de origem é partilhado na rede por todos (broadcast) assim como o IP desconhecido. O computador que tiver o IP responderá com o seu endereço MAC e assim poderá haver conexão e transferência entre os dois. 
+
+#### Funcionamento
+
+Considerando:
+- ID - ip de destino
+- IO - ip de origem
+- MD - mac address de destino
+- MO - mac address de origem
+
+A trama de informação entre um computador A, um router R e um computador B:
+- Entre A e R terá ID = B, IO = A, MD = R, MO = A
+- Entre R e B terá ID = B, IO = A, MD = B, MO = R
+
