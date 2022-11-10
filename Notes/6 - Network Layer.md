@@ -91,3 +91,22 @@ A trama de informação entre um computador A, um router R e um computador B:
 - Entre A e R terá ID = B, IO = A, MD = R, MO = A
 - Entre R e B terá ID = B, IO = A, MD = B, MO = R
 
+### Obtenção de endereços IP, protocolo DHCP
+
+Através dos ISPs. Para servidores HTTP ou de emal os IPs são fixos, para outros casos (máquinas pessoais) usa-se o protocolo DHCP (*Dynamic Host Configuration Protocol*). Funcionamento entre servidor-cliente (DORA):
+- O computador que chega à rede manda um DHCP discover ao servidor;
+- O servidor retorna um DHCP offer
+- O computador responde com DHCP request;
+- O servidor retorna um DHCP Ack;
+Cada transação contém um ID, que é diferente para cada computador da rede.
+
+### Network Address Translation (NAT)
+
+Inicialmente o IPv4 continha apenas 32 bits, o que não foi suficiente para o crescimento da internet. Atualmente existe o IPv6. NAT veio como uma solução para a falta de endereços: existem endereços de formatos que não são usados na internet, não são alcançáveis, pois existe sobreposição. Todos os requests da rede local são enviados com o IP do router, que contém um endereço único. O router contém uma tabela NAT que associa o endereço de origem ao endereço de destino, podendo fazer a tradução quando a resposta chega. 
+
+#### NAT Transversal
+
+Um servidor na rede local (com IP que pode ser comum a muitas redes) pode-se ligar ao exterior através de uma porta fixa X. Assim, todos os requests que vêm para a rede local, o router encaminha diretamente para o servidor assinalado.
+
+## Internet Control Message Protocol ICMP
+
