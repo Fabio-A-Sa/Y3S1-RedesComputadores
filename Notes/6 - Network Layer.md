@@ -93,7 +93,7 @@ A trama de informação entre um computador A, um router R e um computador B:
 
 ### Obtenção de endereços IP, protocolo DHCP
 
-Através dos ISPs. Para servidores HTTP ou de emal os IPs são fixos, para outros casos (máquinas pessoais) usa-se o protocolo DHCP (*Dynamic Host Configuration Protocol*). Funcionamento entre servidor-cliente (DORA):
+Através dos ISPs. Para servidores HTTP ou de email os IPs são fixos, para outros casos (máquinas pessoais) usa-se o protocolo DHCP (*Dynamic Host Configuration Protocol*). Funcionamento entre servidor-cliente (DORA):
 - O computador que chega à rede manda um DHCP discover ao servidor;
 - O servidor retorna um DHCP offer
 - O computador responde com DHCP request;
@@ -108,6 +108,15 @@ Inicialmente o IPv4 continha apenas 32 bits, o que não foi suficiente para o cr
 
 Um servidor na rede local (com IP que pode ser comum a muitas redes) pode-se ligar ao exterior através de uma porta fixa X. Assim, todos os requests que vêm para a rede local, o router encaminha diretamente para o servidor assinalado.
 
-## Internet Control Message Protocol ICMP
+## Internet Control Message Protocol (ICMP)
 
-#TODO
+Usada por routers e servidores host. Consistem em mensagens especiais para avisar de algum erro ou mensagens de controlo. Permitem inclusive fazer o **redirect** de pacotes quando um servidor/router X perceber que o percurso é mais curto de outro lado.
+
+### Comandos
+
+```bash
+$ ping <IP>             # manda mensagens/pacotes para atribuir estatísticas ao servidor de destino
+$ traceroute <MACHINE>  # manda mensagens com time = 1,2,3... de forma a traçar o percurso dos dados
+$ netstat -nr           # permite ver a forwarding table, com destination, gateway, genmask...
+$ ip rout show cache    # ver a cache do ip atual
+```
