@@ -120,3 +120,42 @@ $ traceroute <MACHINE>  # manda mensagens com time = 1,2,3... de forma a traçar
 $ netstat -nr           # permite ver a forwarding table, com destination, gateway, genmask...
 $ ip rout show cache    # ver a cache do ip atual
 ```
+
+## IPv6
+
+- Os endereços são de 128 bits e normalmente representados em hexadecimal;
+- Melhorias no suporte a multicast
+- Configurações de host;
+- Mais eficiente em routing
+- #TODO
+
+### Endereços
+
+#### Link local
+
+Usado para comunicar entre hosts dentro da mesma LAN. É criado automaticamente pelo MAC address. 
+
+#### Global unicast
+
+Pode ser gerado automaticamente pelo prefixo e o MAC address.
+
+#### Anycast
+
+#### Multicast
+#TODO
+
+### Protocol Neighbor Discovery (ND)
+
+O IPv6 usa este protocolo para:
+- descobrir os nós do mesmo LAN;
+- descobrir os vizinhos de um MAC address a partir dos seus endereços IPv6;
+- encontrar rotas na rede;
+- manter a informação dos seus vizinhos;
+
+#### Mensagens
+
+- `Neighbor solicitation`, para obter o endereço MAC do vizinho ou saber se ele está presente;
+- `Neighbor advertisement`, resposta à solicitação;
+- `Router advertisement`, usado pelos routers para enviar informação sobre o prefixo da rede;
+- `Router solicitation`, request de um router advertisement de um router no link;
+- `Redirect`, para informar um host sobre a melhor rota a tomar;
