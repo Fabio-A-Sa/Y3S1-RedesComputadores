@@ -151,12 +151,13 @@ Atribuído a vários dispositivos e um pacote é recebido por um qualquer (e ape
 ### Protocol Neighbor Discovery (ND)
 
 O IPv6 usa este protocolo para:
+
 - descobrir os nós do mesmo LAN;
 - descobrir os vizinhos de um MAC address a partir dos seus endereços IPv6;
 - encontrar rotas na rede;
 - manter a informação dos seus vizinhos;
 
-#### Mensagens
+As mensagens possíveis são as seguintes, que são obtidas através de endereços Link Local:
 
 - `Neighbor solicitation`, para obter o endereço MAC do vizinho ou saber se ele está presente;
 - `Neighbor advertisement`, resposta à solicitação;
