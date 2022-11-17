@@ -28,15 +28,15 @@ Os buffers do lado do receptor e do transmissor são finitos, pelo que não pode
 
 Quando as redes são extensas e desconhecidas, é difícil prever o timeout adequado de espera por uma resposta. Usa-se o mecanismo **Addaptative Retransmission**, que é um algoritmo iterativo:
 
-> Com alpha = 0.125
-> Tempo de espera i = (1-alpha) * (tempo de espera i - 1) + alpha * (tempo de espera da resposta recebida em i)
-> Timeout i = Tempo de espera i
+> Com alpha = 0.125 <br>
+> Tempo de espera i = (1-alpha) * (tempo de espera i - 1) + alpha * (tempo de espera da resposta recebida em i) <br>
+> Timeout i = Tempo de espera i <br>
 
 No entanto este mecanismo ainda não é suficiente, pois a variância pode fazer esperar mais do que necessário. Assim é também necessário calculá-la e ajustar o tempo de timeout:
 
-> Com beta = 0.25
-> Variância em i = (1-beta) * (variância em i - 1) + beta * (variância calculada em i - tempo de espera da resposta recebida em i)
-> Timeout i = Tempo de espera i + 4 * Variância em i
+> Com beta = 0.25 <br>
+> Variância em i = (1-beta) * (variância em i - 1) + beta * (variância calculada em i - tempo de espera da resposta recebida em i) <br>
+> Timeout i = Tempo de espera i + 4 * Variância em i <br>
 
 Estes cálculos não são efetuados quando há retransmissão de segmentos para evitar ambiguidade (há casos onde não dá para saber qual é a trama a que se refere a resposta).
 
@@ -48,9 +48,9 @@ Há adição de uma bit mask dos pacotes recebidos, de forma a que a resposta co
 
 Cada emissor determina a capacidade da comunicação para poder enviar mais ou menos pacotes. Para isso há mais um parâmetro na conexão (*CongestionWindow*):
 
-> MaxWin = MIN(CongestionWindow, AdvertisedWindow)
-> EffWin = MaxWin - (LastByteSent - LastByteAcked)
-> Bitrate = CongestionWindow / Round Trip Time
+> MaxWin = MIN(CongestionWindow, AdvertisedWindow) <br>
+> EffWin = MaxWin - (LastByteSent - LastByteAcked) <br>
+> Bitrate = CongestionWindow / Round Trip Time <br>
 
 Assim, se o nível de congestionamento da rede aumenta a CongestionWindow diminui e vice-versa.
 
