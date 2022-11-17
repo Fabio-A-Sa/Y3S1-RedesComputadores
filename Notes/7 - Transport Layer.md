@@ -22,7 +22,15 @@ Do lado do **emissor**, a informação será partida em fragmentos, e a cada seg
 
 ### Controlo de Fluxo
 
+Os buffers do lado do receptor e do transmissor são finitos, pelo que não podem receber mais do que a sua capacidade porque senão há perda de pacotes. Sempre que o receptor recebe um pacote, verifica se tem espaço e lança na resposta um parâmetro, `Advertise Window`, indicando a quantidade de espaço em bytes que ainda tem disponível. O transmissor faz então resize da próxima payload enviada, considerando o valor dado pela resposta e os bytes já enviados e cuja resposta ainda não foi recebida. 
 
+### Timeout
+
+Quando as redes são extensas e desconhecidas, é difícil prever o timeout adequado de espera por uma resposta. Usa-se o mecanismo **Addaptative Retransmission**, que é um algoritmo iterativo:
+
+> Tempo de espera i = (1-alpha) * (tempo de espera i - 1) + alpha * (tempo de espera da resposta recebida em i)
+
+No entanto este mecanismo ainda não é suficiente, pois a variância pode. 
 
 ### Controlo de Congestionamento
 
