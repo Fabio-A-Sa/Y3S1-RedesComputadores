@@ -4,27 +4,13 @@ Nesta camada existem dois tipos de protocolos principais:
 
 ## User Datagram Protocol (UDP)
 
-Permite que uma aplicação envie diretamente dados, que serão colocados dentro de pacotes na rede com o mínimo overhead possível. Não é aconselhado pois apesar de conseguir detectar erros, não consegue revertê-los (por exemplo falhas no payload, erros de envio/recepção).
+Permite que uma aplicação envie diretamente dados, que serão colocados dentro de pacotes na rede com o mínimo overhead possível. Não é aconselhado pois apesar de conseguir detectar erros, não consegue revertê-los (por exemplo em falhas no payload, erros de envio/recepção). O Header do protocolo contém o número a porta que identifica os processos de origem e destino, o tamanho da trama e um checksum. 
 
-O Header do protocolo contém o número a porta que identifica os processos de origem e destino, o tamanho da trama e um checksum.
+### Transmission Control Protocol (TCP)
 
-## Transmission Control Protocol (TCP)
+É orientado às comunicações, full-duplex (permite transferência nos dois sentidos) e incorpora dois mecanismos de controlo: o Controlo de Fluxo, que permite ao receptor controlar o fluxo de emissão de pacotes, e o Controlo de congestionamento, onde os emissores de dados não geram mais tráfego do que é possível transportar na rede. <br>
 
-É orientado às comunicações, full-duplex (permite transferência nos dois sentidos) e incorpora dois mecanismos de controlo:
-
-#### Controlo de Fluxo
-
-Permite que o receptor consiga controlar o fluxo de emissão de pacotes.
-
-#### Controlo de Congestionamento
-
-Os emissores de dados não geram mais tráfego do que é possível transportar na rede.
-
-## Operações TCP
-
-- Do lado do **emissor**, a informação será partida em fragmentos, e a cada segmento enviado espera por ACK. Sempre que atinge o timeout ou a resposta for NACK, reenvia o mesmo fragmento.
-
-- Do lado do **receptor**, os erros serão detectados através do checksum, os segmentos serão ordenados e os duplicados descartados.
+Do lado do **emissor**, a informação será partida em fragmentos, e a cada segmento enviado espera por ACK. Sempre que atinge o timeout ou a resposta for NACK, reenvia o mesmo fragmento. Do lado do **receptor**, os erros serão detectados através do checksum, os segmentos serão ordenados e os duplicados descartados.
 
 ## Cabeçalho do TCP
 
