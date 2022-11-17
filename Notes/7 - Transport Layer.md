@@ -46,3 +46,17 @@ Há adição de uma bit mask dos pacotes recebidos, de forma a que a resposta co
 
 ### Controlo de Congestionamento
 
+Cada emissor determina a capacidade da comunicação para poder enviar mais ou menos pacotes. Para isso há mais um parâmetro na conexão (*CongestionWindow*):
+
+> MaxWin = MIN(CongestionWindow, AdvertisedWindow)
+> EffWin = MaxWin - (LastByteSent - LastByteAcked)
+> Bitrate = CongestionWindow / Round Trip Time
+
+Assim, se o nível de congestionamento da rede aumenta a CongestionWindow diminui e vice-versa.
+
+#### Como verificar a existência de congestionamento ?
+
+Uma rede diz-se congestionada a partir do momento que se perdem pacotes. É necessário o envio de vários pacotes de uma vez (*Additive Increase*) até que tal aconteça. Usa-se `slow start` quando em vez de adicionar uma unidade à CongestionWindow em cada transmissão, usa-se o mesmo método mas em modo exponencial na base dois. A perda do pacote pode ser dada:
+
+- Por `timeout`. Ocorre um *Multiplicative Decrease*, passando a Congestion Window a 1 e aumentando novamente até metade do valor obtido por mecanismo de slow start. A partir de metade o *Additive Increase* passa a ser incremental de uma unidade;
+- Por `3 ACKs seguidos`. Ocorre um *Multiplicative Decrease*, passando a Congestion Window a metade e *Additive Increase* passa a ser incremental de uma unidade;
