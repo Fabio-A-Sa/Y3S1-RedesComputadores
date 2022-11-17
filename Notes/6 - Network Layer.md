@@ -127,22 +127,26 @@ $ ip rout show cache    # ver a cache do ip atual
 - Melhorias no suporte a multicast
 - Configurações de host;
 - Mais eficiente em routing
-- #TODO
+- Os endereços com zeros podem ser abreviados (::) mas só uma vez por motivos de ambiguidade;
+- Os endereços IPv4 podem ser convertidos: ::ffff:5.6.7.8
 
-### Endereços
+### Endereços IPv6
 
-#### Link local
+#### Link Local
 
-Usado para comunicar entre hosts dentro da mesma LAN. É criado automaticamente pelo MAC address. 
+Usado para comunicar entre hosts dentro da mesma LAN. É criado automaticamente pelo MAC address. Os routers não reencaminham pacotes com endereço de destino Link Local. Formato: fe08::/10
 
-#### Global unicast
+#### Global Unicast
 
-Pode ser gerado automaticamente pelo prefixo e o MAC address.
+Pode ser gerado automaticamente pelo prefixo e o MAC address e são os endereços globais da internet. Formato: 2000::/3
 
 #### Anycast
 
+Atribuído a vários dispositivos e um pacote é recebido por um qualquer (e apenas um) deles. Formato: prefixo da subnet:: (128-n bits a zero). 
+
 #### Multicast
-#TODO
+
+É um endereço para um grupo que tem escopo de link, site ou global. Todos os dispositivos dentro do mesmo grupo recebem o pacote. Formato: 8 1's, flag, escopo e o ID do grupo.
 
 ### Protocol Neighbor Discovery (ND)
 
