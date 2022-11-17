@@ -28,9 +28,15 @@ Os buffers do lado do receptor e do transmissor são finitos, pelo que não pode
 
 Quando as redes são extensas e desconhecidas, é difícil prever o timeout adequado de espera por uma resposta. Usa-se o mecanismo **Addaptative Retransmission**, que é um algoritmo iterativo:
 
+> Com alpha = 0.125
 > Tempo de espera i = (1-alpha) * (tempo de espera i - 1) + alpha * (tempo de espera da resposta recebida em i)
+> Timeout i = Tempo de espera i
 
-No entanto este mecanismo ainda não é suficiente, pois a variância pode. 
+No entanto este mecanismo ainda não é suficiente, pois a variância pode fazer esperar mais do que necessário. Assim é também necessário calculá-la e ajustar o tempo de timeout:
+
+> Com beta = 0.25
+> Variância em i = (1-beta) * (variância em i - 1) + beta * (variância calculada em i - tempo de espera da resposta recebida em i)
+> Timeout i = Tempo de espera i + 4 * Variância em i
 
 ### Controlo de Congestionamento
 
