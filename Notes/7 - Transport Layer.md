@@ -38,5 +38,11 @@ No entanto este mecanismo ainda não é suficiente, pois a variância pode fazer
 > Variância em i = (1-beta) * (variância em i - 1) + beta * (variância calculada em i - tempo de espera da resposta recebida em i)
 > Timeout i = Tempo de espera i + 4 * Variância em i
 
+Estes cálculos não são efetuados quando há retransmissão de segmentos para evitar ambiguidade (há casos onde não dá para saber qual é a trama a que se refere a resposta).
+
+### Selective ACK
+
+Há adição de uma bit mask dos pacotes recebidos, de forma a que a resposta contenha um identificador de qual trama se refere. Assim há retransmissão apenas dos pacotes selecionados e não todos.
+
 ### Controlo de Congestionamento
 
