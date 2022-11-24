@@ -10,5 +10,5 @@ Cada router conhece a rede e contém uma Fowarding Table, construída com base n
 
 ### Link-State Routing
 
-Cada um dos routers emite periodicamente uma mensagem em **broadcast** contendo a sua identificação, a identificação dos routers diretamente ligados a ele e os custos associados. Assim conseguem manter o grafo da rede e a própria Fowarding Table atualizados. 
+Cada um dos routers emite periodicamente (tipicamente de meia em meia hora) uma mensagem em **broadcast** contendo a sua identificação, a identificação dos routers diretamente ligados e os custos associados. Assim conseguem manter o grafo da rede e a própria Fowarding Table atualizados. A mensagem pode ser imediatamente lançada quando algum router detecta uma nova ligação ou perda (através de mensagens *"hello"*). 
 
