@@ -10,5 +10,15 @@ Cada router conhece a rede e contém uma Fowarding Table, construída com base n
 
 ### Link-State Routing
 
-Cada um dos routers emite periodicamente (tipicamente de meia em meia hora) uma mensagem em **broadcast** contendo a sua identificação, a identificação dos routers diretamente ligados e os custos associados. Assim conseguem manter o grafo da rede e a própria Fowarding Table atualizados. A mensagem pode ser imediatamente lançada quando algum router detecta uma nova ligação ou perda (através de mensagens *"hello"*). 
+#### Forma 1
+
+Cada um dos routers emite periodicamente (tipicamente de meia em meia hora) uma mensagem em **broadcast** contendo a sua identificação, a identificação dos routers diretamente ligados e os custos associados. Assim conseguem manter o grafo da rede e a própria Fowarding Table atualizados. A mensagem pode ser imediatamente lançada quando algum router detecta uma nova ligação ou perda (através de mensagens *"hello"*). Por um lado as informações trocadas são mais localizadas e menores, mas por outro qualquer modificação na rede distante acaba por demorar muito tempo a chegar a todos os routers.
+
+#### Forma 2
+
+Através do Algoritmo de `Bellman-Ford` as mensagens são enriquecidas com o conhecimento cada vez mais vasto da rede: dos vizinhos, dos vizinhos dos vizinhos... através da troca das Fowarding Tables correspondentes. Aqui as mensagens são mais longas, pois acabam por conter a informação das tabelas todas, mas por outro lado as modificações são rapidamente transportadas para todos os routers.
+
+### Routing Information Protocol (RIP)
+
+É o protocolo que gere a distância entre routers. Os routers enviam a sua distância aos outros de 30 em 30 segundos ou quando um update causa uma modificação na rede em si.
 
