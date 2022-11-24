@@ -22,3 +22,16 @@ Através do Algoritmo de `Bellman-Ford` as mensagens são enriquecidas com o con
 
 É o protocolo que gere a distância entre routers. Os routers enviam a sua distância aos outros de 30 em 30 segundos ou quando um update causa uma modificação na rede em si.
 
+## Routing in Layer 2 Networks
+
+### Spanning Tree Protocol (STP)
+
+Protocolo existente nas bridges presentes nos switches da rede. Aqui os routers não constroem as suas próprias Spanning Tree, existindo apenas uma árvore no sistema que é construída por mensagens trocadas entre switches. As mensagens são do tipo (Y, d, X):
+
+> M (Y, d, X)
+> Y <- Root da árvore atual
+> d <- Distância de ligação
+> X <- Origem
+
+Inicialmente todos os switches assumem que eles próprios são a raiz da árvore. À medida que as mensagens são trocadas, os switches admitem sempre que a raiz da árvore é agora o switch que contém o menor número identificador. Os switches bloqueiam algumas portas para que não existam ciclos.
+
