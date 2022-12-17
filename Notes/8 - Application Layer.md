@@ -8,9 +8,9 @@ Esta camada define os tipos de mensagens trocadas, a sintaxe e semântica delas 
 
 ### HTTP Não persistente
 
-Permite o envio e recepção de no máximo um objecto por conexão TCP. Sendo RTT o tempo para um pacote viajar do cliente para o servidor e voltar, então o tempo total para uma transferência de um ficheiro é dado por:
+Permite o envio e recepção de no máximo um objecto por conexão TCP. Sendo RTT o tempo para um pacote viajar do cliente para o servidor e voltar, então o tempo total para uma resposta é dado por:
 
-> time = 2 * RTT + transfer_time <br>
+> response_time = 2 * RTT + transfer_time <br>
 > inicialização de uma conexão TCP (RTT) <br>
 > pedido do ficheiro (RTT) <br>
 > trasferência do ficheiro (transfer_time)  <br>
