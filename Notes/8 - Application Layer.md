@@ -33,4 +33,4 @@ Usam-se ainda os protocolos:
 
 ## DNS - Domain Name System
 
-É uma base de dados distribuída implementada com hierarquia que é capaz de traduzir os nomes dos servidores nos respectivos endereços IP. É descentralizada para não haver o ponto único de falha, por distribuição de tráfego e manutenção.
+É uma base de dados distribuída implementada com hierarquia que é capaz de traduzir os nomes dos servidores nos respectivos endereços IP. É descentralizada para não haver o ponto único de falha, por distribuição de tráfego e manutenção. Os servidores TLD (*Top Level Domain*) são responsáveis pelas terminações mais comuns de sites, enquanto os *Authoritative* são responsáveis por tradução de IPs de organizações de Web e Mail. Cada ISP contém um `Local Name Server`, que é o default.
