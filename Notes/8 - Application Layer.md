@@ -31,3 +31,6 @@ Usam-se ainda os protocolos:
 - IMAP (*Internet Mail Access Protocol*), para manipulação das mensagens existentes no servidor. Guarda o estado entre sessões;
 - POP3 (*Post Office Protocol*), para autorização de conexão entre o cliente e o servidor e para downloads de mensagens entre serviços. Não guarda o estado entre sessões;
 
+## DNS - Domain Name System
+
+É uma base de dados distribuída implementada com hierarquia que é capaz de traduzir os nomes dos servidores nos respectivos endereços IP. É descentralizada para não haver o ponto único de falha, por distribuição de tráfego e manutenção.
