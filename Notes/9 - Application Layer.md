@@ -1,4 +1,4 @@
-# 8 - Application Layer
+# 9 - Application Layer
 
 Esta camada define os tipos de mensagens trocadas, a sintaxe e semântica delas e as regras de envio e resposta por parte dos processos. Enquanto que os protocolos TCP e UDP não oferecem segurança, o TLS (*Transport Layer Security*) encripta todas as mensagens enviadas e torna a ligação ponta-a-ponta usando certificados como autenticadores.
 
