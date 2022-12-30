@@ -16,8 +16,13 @@ This repository contains all the exercises and assessments of the UC Redes de Co
 ### Notes
 Notes that I take during theoretical lectures in Markdown <br>
 
-### Exercises
-Varied exercises of easy, medium and difficult level, about the subject taught in the present week. They complement the weekly work developed during the practical classes.
+### Project 1 (Grade: __/20)
+
+File Transfer Protocol with Serial Port and Package Delection Error.
+
+### Project 2 (Grade: __/20)
+
+FTP Protocol implementation and Network structure.
 
 **@ Fábio Araújo de Sá** <br>
 **2022/2023**
