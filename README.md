@@ -16,7 +16,7 @@ This repository contains all the exercises and assessments of the UC Redes de Co
 ### Notes
 Notes that I take during theoretical lectures in Markdown <br>
 
-### Project 1 (Grade: __/20)
+### Project 1 (Grade: 18.6/20)
 
 File Transfer Protocol with Serial Port and Package Delection Error.
 
