@@ -20,7 +20,7 @@ Notes that I take during theoretical lectures in Markdown <br>
 
 File Transfer Protocol with Serial Port and Package Delection Error.
 
-### Project 2 (Grade: __/20)
+### Project 2 (Grade: 18.8/20)
 
 FTP Protocol implementation and Network structure.
 
