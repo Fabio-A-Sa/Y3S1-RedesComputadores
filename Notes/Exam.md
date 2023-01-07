@@ -53,7 +53,7 @@ Na realidade a capacidade teórica de um canal é dada em função do ruído cap
 - Unshielded twisted pair;
 - Fiber optic, para grandes larguras de banda e com muito pouca atenuação, embora tenha alguma perda devido à reflexão total;
 
-Para transmissões wireless, em antenas por exemplo, a razão entre a potência emitida e recebida é igual a (4 * pi * frequência * distância / c) ^ 2
+Para transmissões wireless em antenas a razão entre a potência emitida e recebida é igual a (4 * pi * frequência * distância / c) ^ 2
 
 ## 2 - DataLink Layer
 
@@ -64,11 +64,19 @@ Camada que regula a transmissão, retransmissão, integridade e gestão de erros
 
 ### 2.1 - Error detection
 
-Os erros podem ser simples (independentes de erros anteriores) ou em *bursts*, conjuntos dependentes. Para determinar probabilidades usa-se o FER (Frame Error Ratio) e o BER (Bit Error Ratio). Para deteção de erros usa-se um bit de paridade (onde o bit é 1 quando existe um número ímpar/par de 1s na trama), uma paridade bidimensional (com d = 4).
+Os erros podem ser simples (independentes de erros anteriores) ou em *bursts*, conjuntos dependentes. Para determinar probabilidades usa-se o FER (*Frame Error Ratio*) e o BER (*Bit Error Ratio*). Para deteção de erros usa-se um bit de paridade (onde o bit é 1 quando existe um número ímpar/par de 1s na trama), uma paridade bidimensional (com d = 4).
 
 #### CRC - Cyclic redundancy check
 
-Dado um polinómio M(x) derivado dos bits a transmitir, e r bits de redundância, faz-se R(x) = M(x) * x^r / (x^r + 1). Envia-se M(x) * x^r + R(x). Do lado do receptor é só fazer T(x) por G(x) e o resultado tem de ser zero. Detecta 1,2 ou 3 bits com erro.
+Dado um polinómio M(x) derivado dos bits a transmitir, e r bits de redundância, faz-se R(x) = M(x) * x^r / (x^r + 1). Envia-se M(x) * x^r + R(x). Do lado do receptor é só fazer a divisão inteira de T(x) por G(x) e o resultado tem de ser zero. Detecta 1,2 ou 3 bits com erro.
 
 ### 2.2 - Automatic Repeat Request (ARQ)
+
+Para pacotes perdidos ou com erros, o receptor retransmite a informação. Para isso há três métodos:
+
+#### Stop and Wait
+
+O transmissor envia e fica à espera por timeout da resposta (ACK). Se a resposta não for afirmativa ou não vier em tempo útil, reenvia a informação. Os frames são numerados, assim como as respostas e são descartados duplicados para não haver sobreposição. A eficiência é dada por 1 / (1 + 2 * x), com x sendo a relação entre o tempo de propagação (depende da distância percorrida) e o tempo de transferência da trama (depende do tamanho da trama). A eficiência é muito baixa quando o valor de x é grande, ou seja, quando a trama tem tamanho muito inferior à distância percorrida.
+
+#### Sliding Window Protocol
 
