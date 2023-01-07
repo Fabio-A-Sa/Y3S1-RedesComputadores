@@ -53,3 +53,10 @@ Para transmissões wireless, em antenas por exemplo, a razão entre a potência 
 
 ## 2 - DataLink Layer
 
+Camada que regula a transmissão, retransmissão, integridade e gestão de erros provenientes da transmissão da informação de forma física pela Physical Layer. Para o envio da informação (cadeias de bits) é necessário recorrer a *framming*, através:
+- da contagem de bits, cada frame é constuído pela quantidade de dados seguida desses mesmos dados;
+- da existência de um bit de término com *stuffing*;
+- da existência de flags de início e término, também com *stuffing*;
+
+### 2.1 - Error detection
+
