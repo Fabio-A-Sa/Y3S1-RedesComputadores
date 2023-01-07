@@ -93,3 +93,6 @@ Os erros ou perdas são detectados entre cada par de links e não nas pontas da 
 #### End-to-End ARQ
 
 Só nas pontas é que são detectados os erros ou perdas. A complexidade intermédia é baixa mas não é usada para sistemas com grande distância ou com grande percentagem de erros.
+
+### 2.3 - Delay Models
+
