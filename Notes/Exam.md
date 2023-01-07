@@ -76,7 +76,11 @@ Para pacotes perdidos ou com erros, o receptor retransmite a informação. Para 
 
 #### Stop and Wait
 
-O transmissor envia e fica à espera por timeout da resposta (ACK). Se a resposta não for afirmativa ou não vier em tempo útil, reenvia a informação. Os frames são numerados, assim como as respostas e são descartados duplicados para não haver sobreposição. A eficiência é dada por 1 / (1 + 2 * x), com x sendo a relação entre o tempo de propagação (depende da distância percorrida) e o tempo de transferência da trama (depende do tamanho da trama). A eficiência é muito baixa quando o valor de x é grande, ou seja, quando a trama tem tamanho muito inferior à distância percorrida.
+O transmissor envia e fica à espera por timeout da resposta (ACK). Se a resposta não for afirmativa ou não vier em tempo útil, reenvia a informação. Os frames são numerados, assim como as respostas e são descartados duplicados para não haver sobreposição. A eficiência é dada por 1 / (1 + 2 * x), com x sendo a relação entre o tempo de propagação (depende da distância percorrida) e o tempo de transferência da trama (depende do tamanho da trama). A eficiência é muito baixa quando o valor de x (ou a distância percorrida) é grande, ou seja, quando a trama tem tamanho muito inferior à distância percorrida.
 
-#### Sliding Window Protocol
+#### Go-Back N / Sliding Window Protocol
+
+Uma janela de ordem K permite o envio de até K frames antes de esperar pelas respostas, para aumento da eficiência do Stop and Wait. O receptor rejeita frames fora da sequência e a resposta ACK(i) permite identificar que todos os pacotes de ordem até i-1 foram enviados correctamente. O número máximo de K é 2^M-1, com M = número de bits necessários para codificar o índice das respostas e correspondentes frames. Neste caso a eficiência é W / (1 + 2 * x).
+
+#### Selective Repeat
 
