@@ -24,3 +24,10 @@ A passagem de pacotes pode ser por dois métodos:
 - `Circuit Switching`, só quando a ligação é estabelecida é que os pacotes são enviados;
 - `Packet Switching`, passagem de pacotes pelos intermediários e segundo a ordem na fila;
 
+## 1 - Physical Layer
+
+No meio físico, de acordo com Nyquist, um sinal de frequência X Hz pode ser reconstruído se se capturar 2X símbolos / segundo. A capacidade de um canal com M níveis é definido como C = 2B*Log(M) símbolos ou bits / segundo. A transmissão pode ser:
+
+- *Baseband* - de 0 até um valor de frequência máximo BH. É característico dos fios;
+- *Passband* - em torno de uma frequência FC. É característico de wireless e optical channels;
+
