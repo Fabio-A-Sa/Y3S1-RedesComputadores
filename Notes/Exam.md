@@ -51,3 +51,5 @@ Na realidade a capacidade teórica de um canal é dada em função do ruído cap
 
 Para transmissões wireless, em antenas por exemplo, a razão entre a potência emitida e recebida é igual a (4 * pi * frequência * distância / c) ^ 2
 
+## 2 - DataLink Layer
+
