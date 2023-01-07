@@ -4,11 +4,11 @@
 
 0. Introduction
 1. Physical Layer
-    1.1 Shannon's Law
-    1.2 Meios de Propagação
+    - 1.1 Shannon's Law
+    - 1.2 Meios de Propagação
 2. DataLink Layer
-    2.1 Error detection
-    2.2 Automatic Repeat Request
+    - 2.1 Error detection
+    - 2.2 Automatic Repeat Request
 3. Network Layer
 4. Transport Layer
 5. Application Layer
