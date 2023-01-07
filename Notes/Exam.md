@@ -60,3 +60,9 @@ Camada que regula a transmissão, retransmissão, integridade e gestão de erros
 
 ### 2.1 - Error detection
 
+Os erros podem ser simples (independentes de erros anteriores) ou em *bursts*, conjuntos dependentes. Para determinar probabilidades usa-se o FER (Frame Error Ratio) e o BER (Bit Error Ratio). Para deteção de erros usa-se um bit de paridade (onde o bit é 1 quando existe um número ímpar/par de 1s na trama), uma paridade bidimensional (com d = 4).
+
+#### CRC - Cyclic redundancy check
+
+Dado um polinómio M(x) derivado dos bits a transmitir, e r bits de redundância, faz-se R(x) = M(x) * x^r / (x^r + 1). Envia-se M(x) * x^r + R(x). Do lado do receptor é só fazer T(x) por G(x) e o resultado tem de ser zero. Detecta 1,2 ou 3 bits com erro.
+
