@@ -66,3 +66,5 @@ Os erros podem ser simples (independentes de erros anteriores) ou em *bursts*, c
 
 Dado um polinómio M(x) derivado dos bits a transmitir, e r bits de redundância, faz-se R(x) = M(x) * x^r / (x^r + 1). Envia-se M(x) * x^r + R(x). Do lado do receptor é só fazer T(x) por G(x) e o resultado tem de ser zero. Detecta 1,2 ou 3 bits com erro.
 
+### 2.2 - Automatic Repeat Request (ARQ)
+
