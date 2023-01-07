@@ -86,3 +86,10 @@ Uma janela de ordem K permite o envio de até K frames antes de esperar pelas re
 
 Parecido com o anterior mas aceita tramas fora de ordem. Usado para casos em que x ou W são muito elevados. O receptor sinaliza a falta/erro da trama I com REJ(I) e o transmissor reenvia apenas o que é pedido pelo receptor. O tamanho da janela é agora W = M / 2 = 2^(k-1), com k igual ao número de bits suficientes para codificar o índex da trama. O transmissor envia no máximo meia janela antes de receber um ACK para não ocorrer sobreposição das suas tramas na janela. A nível de eficiência é dado por expressões semelhantes às anteriores.
 
+#### Link-to-Link ARQ
+
+Os erros ou perdas são detectados entre cada par de links e não nas pontas da transmissão. Necessita que a rede lembre o estado, o que provoca um maior processamento interno e memória usada.
+
+#### End-to-End ARQ
+
+Só nas pontas é que são detectados os erros ou perdas. A complexidade intermédia é baixa mas não é usada para sistemas com grande distância ou com grande percentagem de erros.
