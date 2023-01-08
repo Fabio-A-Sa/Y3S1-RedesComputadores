@@ -140,3 +140,5 @@ A DataLink Layer subdivide-se nas camadas LLC (Logical Link Layer), responsável
 
 Podem ser por Channel Partitioning (Time Division Multiple Access ou Frequency Division Multiple Access), ou por Random Access ou por Taking Turns.
 
+- ALOHA: envia o pacote para a rede esperando K tempo para a resposta, com K random. Usado para sistemas de baixa frequência de utilização;
+- CSMA (): 
