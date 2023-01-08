@@ -98,4 +98,14 @@ Só nas pontas é que são detectados os erros ou perdas. A complexidade interm�
 
 #### Multiplexing
 
-Usar o mesmo canal de capacidade C para enviar diferentes tipos de pacotes. Pode ser numa única fila, em M filas fixas pelo tempo e em M filas fixas pela frequência. Nestes dois últimos casos o delay provocado é diretamente proporcional a M e a capacidade de cada canal inversamente proporcional a M.
+Usar o mesmo canal de capacidade C para enviar diferentes tipos de pacotes. Pode ser numa única fila, em M filas fixas pelo tempo (*Time Division Multiplexing*) e em M filas fixas pela frequência (*Frequency Division Multiplexing*). Nestes dois últimos casos o delay provocado é diretamente proporcional a M e a capacidade de cada canal inversamente proporcional a M.
+
+#### Poisson Processes
+
+Seja Lambda o número de chegadas de pacotes por segundo e T o número de segundos:
+- Probabilidade de chegar X pacotes é ((Lambda * T)^x * e^(-Labda * T)) / (X!);
+- Probabilidade do tempo de chegada ser menor que A é (1 - e^(Lambda * T));
+- O tempo médio é dado por Lambda * e^(-Lambda * T)
+
+#### Kendalls Notation
+
