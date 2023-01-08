@@ -134,4 +134,9 @@ Não se pode admitir uma cadeia linear com base na cadência de Poisson. No enta
 
 ### 2.4 - MAC Sublayer
 
-A DataLink Layer subdivide-se nas camadas LLC (Logical Link Layer), responsável por fluxo de dados e detecção de erros, e MAC (Medium Access Control), responsável por controlo de acesso, recepção e retransmissão da informação.
+A DataLink Layer subdivide-se nas camadas LLC (Logical Link Layer), responsável por fluxo de dados e detecção de erros, e MAC (Medium Access Control), responsável por controlo de acesso, recepção e retransmissão da informação. Numa situação normal, vários são os computadores que usam o mesmo canal para comunicar. Para M computadores, cada computador tem direito a C/M da capacidade total do canal se forem todos tentar comunicar entre si, ou C se cada um esperar por sua vez.
+
+#### MAC Protocols
+
+Podem ser por Channel Partitioning (Time Division Multiple Access ou Frequency Division Multiple Access), ou por Random Access ou por Taking Turns.
+
