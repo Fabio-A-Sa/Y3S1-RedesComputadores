@@ -107,5 +107,16 @@ Seja Lambda o número de chegadas de pacotes por segundo e T o número de segund
 - Probabilidade do tempo de chegada ser menor que A é (1 - e^(Lambda * T));
 - O tempo médio é dado por Lambda * e^(-Lambda * T)
 
-#### Kendalls Notation
+- Lambda -> O número de pacotes que chegam por unidade de tempo
+- Miu -> O número de pacotes servidor por unidade de tempo
+- Ró -> Relação entre Lambda e Miu, dá a intensidade de tráfego e a ocupação do servidor
+
+#### Kendalls Notation A/S/s/K
+
+A -> Processo de chegada de pacotes
+S -> Processo de serviço dos pacotes
+s -> Número de servidores
+K -> Capacidade do sistema, normalmente infinito para sistemas estáveis
+
+N = Lambda * T, com N a representar o número de clientes do sistema (os que vão chegando e os que estão a ser tratados no momento). O número de clientes no sistema não dependem de Miu, a taxa de serviço.
 
