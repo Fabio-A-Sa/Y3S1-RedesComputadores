@@ -118,5 +118,8 @@ S -> Processo de serviço dos pacotes
 s -> Número de servidores
 K -> Capacidade do sistema, normalmente infinito para sistemas estáveis
 
-N = Lambda * T, com N a representar o número de clientes do sistema (os que vão chegando e os que estão a ser tratados no momento). O número de clientes no sistema não dependem de Miu, a taxa de serviço.
+A Little's Law indica que N = Lambda * T, com N a representar o número de clientes do sistema (os que vão chegando e os que estão a ser tratados no momento). O número de clientes no sistema não dependem de Miu, a taxa de serviço.
 
+#### Cadeia de Markov
+
+Usada para sistemas M/M/1/Inf estáveis. A probabilidade de chegar um novo pacote à fila num tempo Sigma é Lambda * Sigma e a probabilidade de um pacote ser atendido é Miu * Sigma
