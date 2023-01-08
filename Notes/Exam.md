@@ -131,3 +131,7 @@ Usada para sistemas M/M/1/Inf estáveis. A probabilidade de chegar um novo pacot
 #### Redes de filas de espera
 
 Não se pode admitir uma cadeia linear com base na cadência de Poisson. No entanto dá para aproximar, tornando-se uma cadeia subdividida (Kleinrock Independence Approximation) através do modelo M/M/1 ou em redes de Jackson.
+
+### 2.4 - MAC Sublayer
+
+A DataLink Layer subdivide-se nas camadas LLC (Logical Link Layer), responsável por fluxo de dados e detecção de erros, e MAC (Medium Access Control), responsável por controlo de acesso, recepção e retransmissão da informação.
