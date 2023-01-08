@@ -96,3 +96,6 @@ Só nas pontas é que são detectados os erros ou perdas. A complexidade interm�
 
 ### 2.3 - Delay Models
 
+#### Multiplexing
+
+Usar o mesmo canal de capacidade C para enviar diferentes tipos de pacotes. Pode ser numa única fila, em M filas fixas pelo tempo e em M filas fixas pela frequência. Nestes dois últimos casos o delay provocado é diretamente proporcional a M e a capacidade de cada canal inversamente proporcional a M.
