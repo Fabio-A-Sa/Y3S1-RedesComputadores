@@ -122,4 +122,12 @@ A Little's Law indica que N = Lambda * T, com N a representar o número de clien
 
 #### Cadeia de Markov
 
-Usada para sistemas M/M/1/Inf estáveis. A probabilidade de chegar um novo pacote à fila num tempo Sigma é Lambda * Sigma e a probabilidade de um pacote ser atendido é Miu * Sigma
+Usada para sistemas M/M/1/Inf estáveis. A probabilidade de chegar um novo pacote à fila num tempo Sigma é Lambda * Sigma e a probabilidade de um pacote ser atendido é Miu * Sigma. A probabilidade de estar num estado N é Ró ^ N * (1 - Ró).
+
+- Nos modelos de Poisson de chegada de pacotes, uma taxa de serviço alta não é sinónimo de um número pequeno de pacotes à espera (porque os pacotes tendem a chegar todos juntos);
+
+- Nos modelos discretos de chegada de pacotes (D/D/1), não vai haver espera, considerando um sistema estável (a taxa de chegada <= taxa de processamento);
+
+#### Redes de filas de espera
+
+Não se pode admitir uma cadeia linear com base na cadência de Poisson. No entanto dá para aproximar, tornando-se uma cadeia subdividida (Kleinrock Independence Approximation) através do modelo M/M/1 ou em redes de Jackson.
