@@ -162,3 +162,5 @@ Acontecem quando numa rede todos os emissores têm a mesma prioridade:
 - Full Duplex Ethernet - o CSMA/CD não é usado praticamente, pois não existem colisões. Os cabos UTP são usados (Unshielded Twisted Pair), que são mais baratos e fáceis de instalar, embora não suportem bem múltiplas transmissões ou receptores;
 - Ethernet de hoje em dia - UTP para distâncias curtas, fibras óticas para longas, suporta redundância para minimizar erros;
 
+## 3 - Network Layer
+
