@@ -10,6 +10,11 @@
     - 2.1 Error detection
     - 2.2 Automatic Repeat Request
 3. Network Layer
+    - 3.1 DHCP
+    - 3.2 NAT
+    - 3.3 ICMP
+    - 3.4 IPv6
+    - 3.5 DN
 4. Transport Layer
 5. Application Layer
 
@@ -180,8 +185,16 @@ Serve para descobrir rotas e fazer redirects para caminhos mais curtos / com men
 
 ### 3.4 - IPv6 Addresses
 
-- Unicast: um sender e um receiver
-- Multicast: um sender e vários receivers
-- Anycast: 
-- Link-local: 
+- Unicast: um sender e um receiver;
+- Multicast: um sender e vários receivers;
+- Anycast: proporciona iguais IDs para vários receivers;
+- Link-local: para redes privadas;
+
+### 3.5 - ND - Neighbor Discovery Protocol
+
+Usa mensagens ICMPv6 com Link Local Addresses para descobrir novos nós da mesma LAN, descobrir os routers da rede e manter atualizados as características dos nós vizinhos. As mensagens trocadas podem ser as seguintes:
+
+- Neighbor solicitation/advertisement, para obter o endereço MAC do vizinho ou saber se ele está presente;
+- Router solicitation/advertisement, usado pelos routers para enviar informação sobre o prefixo da rede;
+- Redirect, para informar um host sobre a melhor rota a tomar;
 
