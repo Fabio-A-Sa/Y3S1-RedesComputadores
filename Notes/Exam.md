@@ -18,6 +18,7 @@
 4. Transport Layer
     - 4.1 UDP
     - 4.2 TCP
+    - 4.3 Routing
 5. Application Layer
 
 ## 0 - Introduction
@@ -211,3 +212,20 @@ Não tem um mecanismo de controlo de erros mas como é mais simples permite cont
 Orientado às comunicações, com base em ACK e NACK, e incorpora o controlo de fluxo e controlo de congestionamento. Os números de sequência correspondem ao primeiro byte transferido naquela trama, para depois poder ser ordenado e descarta duplicados. Por um lado há **controlo de fluxo** pois há o parâmetro Advertise Window que indica a quantidade de espaço que ainda tem disponível. O tempo de retransmissão é feito iterativamente usando uma *Adaptative Retransmission*, em que há retransmissão apenas dos blocos selecionados. Por outro lado há **controlo de congestionamento**, com *additive increase* e *multiplicative decrease* da CongestionWindow:
 - Sempre que leva time-out, baixa, vai até metade em slow start e depois additive increase;
 - Sempre que levar 3 ACKs repetidos, baixa, e depois additive increase;
+
+### 4.3 - Routing
+
+A escolha de um bom caminho (boa largura de banda, curta distância, baixa latência) é importante para garantir a eficiência da rede e limitar a quantidade de pacotes perdidos no processo. A Spanning Tree pode ser realizada por:
+- Algoritmo de Dijkstra, onde as mensagens trocadas são mais localizadas (partilha informação do nó N e nós adjacentes a N apenas), o que provoca um delay grande se a rede for considerável;
+- Algoritmo de Bellman-Ford, onde trocam-se as Fowarding Tables em vez de mensagens soltas, as mensagens são mais longas mas as modificações perpetuam-se na rede mais rapidamente;
+
+#### RIP - Routing Information Protocol
+
+Protocolo que gere a distância entre os routers. Os routers enviam a sua distância aos outros de 30 em 30 segundos ou quando um update causa uma modificação na rede em si. Está limitado a pequenas redes.
+
+### STP - Spanning Tree Protocol
+
+Protocolo existente nas bridges presentes nos switches da rede. Aqui os routers não constroem as suas próprias Spanning Tree, existindo apenas uma árvore no sistema que é construída por mensagens trocadas entre switches. As mensagens são do tipo (root da árvore atual, distância de ligação, origem). Inicialmente todos os switches assumem que eles próprios são a raiz da árvore. À medida que as mensagens são trocadas, os switches admitem sempre que a raiz da árvore é agora o switch que contém o menor número identificador. Os switches bloqueiam algumas portas para que não existam ciclos.
+
+## 5 - Application Layer
+
