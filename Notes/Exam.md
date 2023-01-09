@@ -229,3 +229,4 @@ Protocolo existente nas bridges presentes nos switches da rede. Aqui os routers 
 
 ## 5 - Application Layer
 
+Esta camada define os tipos de mensagens trocadas, a sintaxe e semântica delas e as regras de envio e resposta por parte dos processos. Por exemplo o protocolo HTTP(S), que pode ser não-persistente (um recurso por conexão TCP, 2 * RTT + FileTransferTime) ou persistente (vários recursos numa mesma conexão TCP). Esta última pode ser com *pipelining*, para vários requests sem esperar pela resposta (um RTT para tudo), ou sem *pipelining*, quando novos requests são feitos só depois de receber a resposta ao anterior (cada request tem direito ao seu RTT). O IMAP permite manipular mensagens existentes no servidor e guarda o estado entre sessões. O POP3 serve para autorização de conexão entre o servidor e para download de mensagens entre serviços, mas não guarda o estado entre sessões.
