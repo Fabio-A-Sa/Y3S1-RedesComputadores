@@ -136,11 +136,22 @@ Não se pode admitir uma cadeia linear com base na cadência de Poisson. No enta
 
 A DataLink Layer subdivide-se nas camadas LLC (Logical Link Layer), responsável por fluxo de dados e detecção de erros, e MAC (Medium Access Control), responsável por controlo de acesso, recepção e retransmissão da informação. Numa situação normal, vários são os computadores que usam o mesmo canal para comunicar. Para M computadores, cada computador tem direito a C/M da capacidade total do canal se forem todos tentar comunicar entre si, ou C se cada um esperar por sua vez.
 
-#### MAC Protocols
+#### Channel Partitioning Protocols
 
-Podem ser por Channel Partitioning (Time Division Multiple Access ou Frequency Division Multiple Access), ou por Random Access ou por Taking Turns.
+Time Division Multiple Access ou Frequency Division Multiple Access. Custará na eficiência de cada chamada pois agora cada emissor tem que partilhar o meio (ou por slots de tempo ou por frequência).
+
+#### Random Access Protocols
+
+Acontecem quando numa rede todos os emissores têm a mesma prioridade:
 
 - ALOHA: envia o pacote para a rede esperando K tempo para a resposta, com K random. Usado para sistemas de baixa frequência de utilização;
 - CSMA (Carrier Sense Multiple Access): se ninguém estiver a transmitir, lança o pacote na rede. Pode ser persistente, transmite quando o canal estiver desocupado tentando sempre ver de está livre, ou não persistente, quando ainda espera um tempo random R antes de cada tentativa de ver se está livre e só depois é que transmite, ou P-Persistente, quando transmite de um modo ou outro com probabilidade P. De qualquer modo espera sempre por ACK;
 - CSMA/CD: Com deteção de colisões, e nesse caso aborta. Transmite novamente mas após esperar um tempo exponencial (Binary Exponential Backoff). Tramas curtas podem impedir a deteção de colisões sob o ponto de vista do emissor. O tempo de transmissão da trama deve ser maior do que duas vezes o tempo de ida e volta (tempo de propagação). Não dá para ser usada em sistemas sem fios devido às distorções causadas pelo meio, iria "detectar" colisões não tendo nenhuma ou não conseguiria ouvir a frequência do outro emissor pois as distâncias são elevadas.
 - CSMA/CA: Evita erros, esperando ainda um tempo exponencial depois que descobrir que o canal está livre. É necessário voltar a haver ACK e é característica das redes sem fios.
+
+#### Taking Turns Protocols
+
+- Polling: quando existe um computador Master na rede que dá autorização para as outras transferirem pacotes. Se os tempos forem bem implementados não há colisões mas perde-se algum tempo em espera ou na transmissão dos pedidos;
+- Token Passing: só há transmissão de pacotes por parte dos edges que têm o token. Há latência pois tem de haver passagem do token;
+
+
