@@ -164,3 +164,5 @@ Acontecem quando numa rede todos os emissores têm a mesma prioridade:
 
 ## 3 - Network Layer
 
+Transporta os pacotes de dados da origem ao destino e calcula caminhos através de grafos. O encaminhamento de pacotes pode ser por **Virtual Circuits** (todos os pacotes são enviados sequencialmente se houver um caminho estável entre o primeiro e último routers) ou por **Datagrams Networks**, quando os pacotes são enviados sem um caminho definido, o que é mais difícil de gerir e podem vir fora de ordem.
+
