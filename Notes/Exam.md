@@ -16,6 +16,8 @@
     - 3.4 IPv6
     - 3.5 DN
 4. Transport Layer
+    - 4.1 UDP
+    - 4.2 TCP
 5. Application Layer
 
 ## 0 - Introduction
@@ -202,7 +204,10 @@ Usa mensagens ICMPv6 com Link Local Addresses para descobrir novos nós da mesma
 
 ### 4.1 - User Datagram Protocol (UDP)
 
-
+Não tem um mecanismo de controlo de erros mas como é mais simples permite contacto direto com o IP de destino sem muito overhead, enviando diretamente os dados. Só tem um checksum que é opcional.
 
 ### 4.2 - Transmission Control Protocol (TCP)
 
+Orientado às comunicações, com base em ACK e NACK, e incorpora o controlo de fluxo e controlo de congestionamento. Os números de sequência correspondem ao primeiro byte transferido naquela trama, para depois poder ser ordenado e descarta duplicados. Por um lado há **controlo de fluxo** pois há o parâmetro Advertise Window que indica a quantidade de espaço que ainda tem disponível. O tempo de retransmissão é feito iterativamente usando uma *Adaptative Retransmission*, em que há retransmissão apenas dos blocos selecionados. Por outro lado há **controlo de congestionamento**, com *additive increase* e *multiplicative decrease* da CongestionWindow:
+- Sempre que leva time-out, baixa, vai até metade em slow start e depois additive increase;
+- Sempre que levar 3 ACKs repetidos, baixa, e depois additive increase;
