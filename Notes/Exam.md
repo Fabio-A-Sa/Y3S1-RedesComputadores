@@ -174,5 +174,5 @@ Para obtenção de IP por parte de um HOST a partir do server da rede. Segue res
 
 Network Address Translation. Por motivos de IPv4 usado internamente não há IPs suficientes, pelo que a Internet contacta com um único router de casa, que fica encarregue de traduzir os endereços e redirecionar os pacotes. Em casos excepcionais, existe a NAT transversal, que permite contacto directo com um host privado a partir de uma entrada específica na tabela.
 
-### 3.3 - ICMP Internet Control Message Protocol
+### 3.3 - ICMP - Internet Control Message Protocol
 
