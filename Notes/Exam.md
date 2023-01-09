@@ -166,3 +166,13 @@ Acontecem quando numa rede todos os emissores têm a mesma prioridade:
 
 Transporta os pacotes de dados da origem ao destino e calcula caminhos através de grafos. O encaminhamento de pacotes pode ser por **Virtual Circuits** (todos os pacotes são enviados sequencialmente se houver um caminho estável entre o primeiro e último routers) ou por **Datagrams Networks**, quando os pacotes são enviados sem um caminho definido, o que é mais difícil de gerir e podem vir fora de ordem.
 
+### 3.1 - DHCP - Dynamic Host Configuration Protocol
+
+Para obtenção de IP por parte de um HOST a partir do server da rede. Segue respostas DORA (Discovery, Offer, Request, Ack), em que as três últimas já vêm com o IP único para aquela subrede.
+
+### 3.2 - NAT - Network Address Translation
+
+Network Address Translation. Por motivos de IPv4 usado internamente não há IPs suficientes, pelo que a Internet contacta com um único router de casa, que fica encarregue de traduzir os endereços e redirecionar os pacotes. Em casos excepcionais, existe a NAT transversal, que permite contacto directo com um host privado a partir de uma entrada específica na tabela.
+
+### 3.3 - ICMP Internet Control Message Protocol
+
