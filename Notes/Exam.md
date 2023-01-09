@@ -178,3 +178,10 @@ Network Address Translation. Por motivos de IPv4 usado internamente não há IPs
 
 Serve para descobrir rotas e fazer redirects para caminhos mais curtos / com menos custo
 
+### 3.4 - IPv6 Addresses
+
+- Unicast: um sender e um receiver
+- Multicast: um sender e vários receivers
+- Anycast: 
+- Link-local: 
+
