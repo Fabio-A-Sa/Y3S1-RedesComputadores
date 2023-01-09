@@ -141,6 +141,6 @@ A DataLink Layer subdivide-se nas camadas LLC (Logical Link Layer), responsável
 Podem ser por Channel Partitioning (Time Division Multiple Access ou Frequency Division Multiple Access), ou por Random Access ou por Taking Turns.
 
 - ALOHA: envia o pacote para a rede esperando K tempo para a resposta, com K random. Usado para sistemas de baixa frequência de utilização;
-- CSMA (Carrier Sense Multiple Access): se ninguém estiver a transmitir, lança o pacote na rede. Pode ser persistente, transmite quando o canal estiver desocupado, ou não persistente, quando ainda espera um tempo random R e só depois é que transmite, ou P-Persistente, quando transmite de um modo ou outro com probabilidade P. De qualquer modo espera sempre por ACK;
+- CSMA (Carrier Sense Multiple Access): se ninguém estiver a transmitir, lança o pacote na rede. Pode ser persistente, transmite quando o canal estiver desocupado tentando sempre ver de está livre, ou não persistente, quando ainda espera um tempo random R antes de cada tentativa de ver se está livre e só depois é que transmite, ou P-Persistente, quando transmite de um modo ou outro com probabilidade P. De qualquer modo espera sempre por ACK;
 - CSMA/CD: Com deteção de colisões, e nesse caso aborta. Transmite novamente mas após esperar um tempo exponencial (Binary Exponential Backoff). Tramas curtas podem impedir a deteção de colisões sob o ponto de vista do emissor. O tempo de transmissão da trama deve ser maior do que duas vezes o tempo de ida e volta (tempo de propagação).
-- CSMA/CA: Com deteção e 
+- CSMA/CA: Com deteção e   
