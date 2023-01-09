@@ -176,3 +176,5 @@ Network Address Translation. Por motivos de IPv4 usado internamente não há IPs
 
 ### 3.3 - ICMP - Internet Control Message Protocol
 
+Serve para descobrir rotas e fazer redirects para caminhos mais curtos / com menos custo
+
