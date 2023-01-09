@@ -154,4 +154,11 @@ Acontecem quando numa rede todos os emissores têm a mesma prioridade:
 - Polling: quando existe um computador Master na rede que dá autorização para as outras transferirem pacotes. Se os tempos forem bem implementados não há colisões mas perde-se algum tempo em espera ou na transmissão dos pedidos;
 - Token Passing: só há transmissão de pacotes por parte dos edges que têm o token. Há latência pois tem de haver passagem do token;
 
+### 2.5 - Evolução da internet na Link Layer
+
+- Bus - com cabo coaxial, os computadores ligavam-se através de um cabo onde podia haver colisões e múltiplos transmissores e receptores.
+- Active Hub - existem repetidores que enviam os bits recebidos para todos as outras portas. Existe deteção de colisão, mas só numa única porta de cada vez.
+- Bridge - Separa os domínios de colisão e vários frames podem ser transmitidos simultaneamente.
+- Full Duplex Ethernet - o CSMA/CD não é usado praticamente, pois não existem colisões. Os cabos UTP são usados (Unshielded Twisted Pair), que são mais baratos e fáceis de instalar, embora não suportem bem múltiplas transmissões ou receptores;
+- Ethernet de hoje em dia - UTP para distâncias curtas, fibras óticas para longas, suporta redundância para minimizar erros;
 
